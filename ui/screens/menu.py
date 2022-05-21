@@ -11,32 +11,32 @@ DEBUG = False
 
 
 #Button("CONNECT", "CONNECT", WINDOW_WIDTH / 2 + PADDING, WINDOW_HEIGHT / 2 - 50, GRAY, 0),
-buttons = [Button("START", "START", WINDOW_WIDTH / 2 + PADDING, WINDOW_HEIGHT / 2 + PADDING * 2, GOLD, 0)]
+buttons = [Button("START", "START", WINDOW_WIDTH / 2 + PADDING - 100, WINDOW_HEIGHT / 2 + PADDING * 2 + 100, PURPLE, 0)]
 
 
 def draw(win):
     win.fill(WHITE)
-    pygame.draw.rect(win, GOLD, (0, 0, 150, WINDOW_HEIGHT))
-    pygame.draw.rect(win, GOLD, (WINDOW_WIDTH - 150, 0, 150, WINDOW_HEIGHT))
-    pygame.draw.rect(win, PURPLE, (0, 0, WINDOW_WIDTH, 150))
-    pygame.draw.rect(win, PURPLE, (round(WINDOW_WIDTH / 4 - 8), round(WINDOW_HEIGHT / 3),
-                                   round(WINDOW_WIDTH / 2 + 16), round(WINDOW_HEIGHT / 3 + PADDING * 4)))
-    pygame.draw.rect(win, WHITE,
-                     (round(WINDOW_WIDTH / 4 + PADDING * 3), round(WINDOW_HEIGHT / 3 + PADDING * 3),
-                      round(WINDOW_WIDTH / 2 - PADDING * 6), round(WINDOW_HEIGHT / 3 - PADDING * 2)))
+    #pygame.draw.rect(win, GOLD, (0, 0, 150, WINDOW_HEIGHT))
+    #pygame.draw.rect(win, GOLD, (WINDOW_WIDTH - 150, 0, 150, WINDOW_HEIGHT))
+    #pygame.draw.rect(win, PURPLE, (0, 0, WINDOW_WIDTH, 150))
+    #pygame.draw.rect(win, PURPLE, (round(WINDOW_WIDTH / 4 - 8), round(WINDOW_HEIGHT / 3),
+                                   #round(WINDOW_WIDTH / 2 + 16), round(WINDOW_HEIGHT / 3 + PADDING * 4)))
+    #pygame.draw.rect(win, WHITE,
+                     #(round(WINDOW_WIDTH / 4 + PADDING * 3), round(WINDOW_HEIGHT / 3 + PADDING * 3),
+                      #round(WINDOW_WIDTH / 2 - PADDING * 6), round(WINDOW_HEIGHT / 3 - PADDING * 2)))
 
-    text = TITLE_FONT.render("Backgammon", 1, WHITE)
+    text = TITLE_FONT.render("Backgammon", 1, BLACK)
     win.blit(text, (round(WINDOW_WIDTH / 2) - round(text.get_width() / 2), 25))
 
-    text = BODY_FONT_SMALL.render("v0.1", 1, WHITE)
+    text = BODY_FONT_SMALL.render("v0.1", 1, BLACK)
     win.blit(text, (WINDOW_WIDTH - text.get_width() - PADDING, 150 - text.get_height() - PADDING))
 
     #text = BODY_FONT_SMALL.render("Server:", 1, PURPLE)
     #win.blit(text, (text_boxes[0].rect.x - text.get_width() - PADDING, text_boxes[0].rect.y + int(text.get_height() / 2 - PADDING / 2)))
 
-    text = BODY_FONT.render("Local Game:", 1, PURPLE)
-    win.blit(text, (round(WINDOW_WIDTH / 2 - text.get_width() - PADDING),
-                    round(WINDOW_HEIGHT / 2 + text.get_height() / 2 + PADDING / 2)))
+    text = BODY_FONT.render("Local Game:", 1, BLACK)
+    #win.blit(text, (round(WINDOW_WIDTH / 2 - text.get_width() - PADDING),
+                    #round(WINDOW_HEIGHT / 2 + text.get_height() / 2 + PADDING / 2 + 100)))
 
     #for t in text_boxes:
     #    t.draw(win)
@@ -46,6 +46,8 @@ def draw(win):
     # comment out the below line to get of the red grid lines across the screen.
     # draw_grid_lines(win)
 
+    dices = pygame.image.load("ui/images/backgammon_ambiance3.png")
+    win.blit(dices,(280,0))
     pygame.display.update()
 
 
