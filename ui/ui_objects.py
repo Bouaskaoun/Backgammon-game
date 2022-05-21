@@ -17,7 +17,7 @@ class Button:
         self.centered_text = (type != 2)  # type 2 buttons are not centered
 
     def draw(self, win):
-        pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.height))
+        pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.height),border_radius= 15)
         text = self.font.render(self.text, 1, self.font_color)
         if self.centered_text:
             win.blit(text, (self.x + round(self.width / 2) - round(text.get_width() / 2),

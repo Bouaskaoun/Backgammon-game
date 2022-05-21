@@ -11,7 +11,7 @@ DEBUG = False
 
 
 #Button("CONNECT", "CONNECT", WINDOW_WIDTH / 2 + PADDING, WINDOW_HEIGHT / 2 - 50, GRAY, 0),
-buttons = [Button("START", "START", WINDOW_WIDTH / 2 + PADDING - 100, WINDOW_HEIGHT / 2 + PADDING * 2 + 100, PURPLE, 0)]
+buttons = [Button("START", "START", WINDOW_WIDTH / 2 + PADDING - 90, WINDOW_HEIGHT / 2 + PADDING * 2 + 100, BLACK, 0)]
 
 
 def draw(win):
