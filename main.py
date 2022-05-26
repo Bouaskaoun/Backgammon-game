@@ -1,15 +1,9 @@
-"""
-This class handles the client side of the backgammon player.
-Students should run this class to view games
-"""
 from ui import ui_constants
-from ui.screens import menu, ingame # online
+from ui.screens import menu, ingame
 import pygame
 import sys
-
-# Below are the agents used in "Play Offline"
-# To change, simply add an import and change p1 or p2 to desired Agent
 from agents import SkeletonAgent, backgammon_ssbg
+
 player1 = backgammon_ssbg.BackgammonPlayer()
 player2 = SkeletonAgent.BackgammonPlayer()
 
@@ -47,9 +41,6 @@ def start_client():
             exit()
         elif next_screen == "MENU":
             next_screen = menu.run(window, player1, player2)
-        elif next_screen == "ONLINE":
-            raise NotImplementedError()
-            # next_screen = online.run(window, username, player1)
         elif len(next_screen) > 1 and next_screen[0] == "INGAME":
             p1 = next_screen[1]
             p2 = next_screen[2]

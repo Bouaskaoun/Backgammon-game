@@ -466,13 +466,10 @@ def run(window, p1, p2, deterministic, game):
                                     turn = 0
                                     clock_speed_index = 3
                                 elif b.button_id == "Rerun":
-                                    if online:
-                                        exit()
-                                    else:
-                                        turn = 0
-                                        clock_speed_index = 3
-                                        draw(window, None, turn, play)
-                                        with concurrent.futures.ThreadPoolExecutor() as executor:
-                                            future = executor.submit(compute_game, p1, p2, TIME_LIMIT, deterministic, False, None)
-                                            game = future.result()
+                                    turn = 0
+                                    clock_speed_index = 3
+                                    draw(window, None, turn, play)
+                                    with concurrent.futures.ThreadPoolExecutor() as executor:
+                                        future = executor.submit(compute_game, p1, p2, TIME_LIMIT, deterministic, False, None)
+                                        game = future.result()
         draw(window, game, turn, play)
